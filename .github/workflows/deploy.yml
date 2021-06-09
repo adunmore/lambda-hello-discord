@@ -26,6 +26,6 @@ jobs:
             --no-confirm-changeset \
             --no-fail-on-empty-changeset \
             --stack-name hello-discord \
-            # --s3-bucket adunmore-hello-discord \
+            --s3-bucket adunmore-hello-discord \
             --capabilities CAPABILITY_IAM \
             --parameter-overrides DiscordClientId=${{ secrets.DISCORD_CLIENT_ID }} DiscordPublicKey=${{ secrets.DISCORD_PUBLIC_KEY }} DiscordClientSecret=${{ secrets.DISCORD_CLIENT_SECRET }} GuildId=${{ secrets.GUILD_ID }}
