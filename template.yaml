@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: AWS SAM template with a simple API definition
+
+Parameters:
+  DISCORD_CLIENT_ID:
+    Type: String
+  DISCORD_PUBLIC_KEY:
+    Type: String
+  DISCORD_CLIENT_SECRET:
+    Type: String
+  TESTING_GUILD:
+    Type: String
+
+Resources:
+  ApiGatewayApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+  ApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app.handler
+      CodeUri: ./
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /interactions
+            Method: post
+            RestApiId:
+              Ref: ApiGatewayApi
+      Runtime: python3.8
+      PackageType: Zip
+      Environment:
+        Variables:
+          DISCORD_CLIENT_ID: !Ref DISCORD_CLIENT_ID
+          DISCORD_PUBLIC_KEY: !Ref DISCORD_PUBLIC_KEY
+          DISCORD_CLIENT_SECRET: !Ref DISCORD_CLIENT_SECRET
+          GUILD_ID: !Ref GUILD_ID
