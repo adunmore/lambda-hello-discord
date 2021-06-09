@@ -3,13 +3,13 @@ Transform: AWS::Serverless-2016-10-31
 Description: AWS SAM template with a simple API definition
 
 Parameters:
-  DISCORD_CLIENT_ID:
+  DiscordClientId:
     Type: String
-  DISCORD_PUBLIC_KEY:
+  DiscordPublicKey:
     Type: String
-  DISCORD_CLIENT_SECRET:
+  DiscordClientSecret:
     Type: String
-  TESTING_GUILD:
+  GuildId:
     Type: String
 
 Resources:
@@ -34,7 +34,7 @@ Resources:
       PackageType: Zip
       Environment:
         Variables:
-          DISCORD_CLIENT_ID: !Ref DISCORD_CLIENT_ID
-          DISCORD_PUBLIC_KEY: !Ref DISCORD_PUBLIC_KEY
-          DISCORD_CLIENT_SECRET: !Ref DISCORD_CLIENT_SECRET
-          GUILD_ID: !Ref GUILD_ID
+          DISCORD_CLIENT_ID: !Ref DiscordClientId
+          DISCORD_PUBLIC_KEY: !Ref DiscordPublicKey
+          DISCORD_CLIENT_SECRET: !Ref DiscordClientSecret
+          GUILD_ID: !Ref GuildId
