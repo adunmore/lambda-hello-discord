@@ -21,7 +21,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: app.handler
-      CodeUri: ./
+      CodeUri: s3://adunmore-hello-world/5b43761af2b3d1be7b5678f847357546
       Events:
         ApiEvent:
           Type: Api
