@@ -14,9 +14,13 @@ app.config["DISCORD_CLIENT_SECRET"] = os.environ["DISCORD_CLIENT_SECRET"]
 
 @discord.command()
 def ping(ctx):
-    # breakpoint()
     "Respond with a friendly 'pong'!"
     return "Pong!"
+
+@discord.command()
+def hello(ctx, name: str = "Aaron"):
+    "Have the bot say hello!"
+    return f"Hello, {name}"
 
 discord.set_route("/interactions")
 
