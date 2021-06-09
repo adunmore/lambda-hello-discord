@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-python@v2
       - uses: abatilo/actions-poetry@v2.1.0
       - name: Generate requirements.txt from pyproject.toml
-        run: poetry export -f requirements.txt --without-hashes > requirements.txt
+        run: poetry export -f requirements.txt --without-hashes -o requirements.txt
       - uses: aws-actions/setup-sam@v1
       - uses: aws-actions/configure-aws-credentials@v1
         with:
