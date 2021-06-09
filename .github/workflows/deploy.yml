@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-      - uses: abatilo/actions-poetry
+      - uses: abatilo/actions-poetry@v2
       - name: Generate requirements.txt from pyproject.toml
         run: poetry export -f requirements.txt --without-hashes > requirements.txt
       - uses: aws-actions/setup-sam@v1
