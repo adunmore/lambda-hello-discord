@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "discord-scratch"
+version = "0.1.0"
+description = ""
+authors = ["Aaron Dunmore <aedunmore@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "3.9.4"
+Flask = "^2.0.1"
+mypy = "^0.812"
+pylint = "^2.8.2"
+Flask-Discord-Interactions = "^0.1.9"
+apig-wsgi = "^2.11.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
