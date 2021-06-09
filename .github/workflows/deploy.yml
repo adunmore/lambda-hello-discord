@@ -24,7 +24,7 @@ jobs:
       - run: |
           sam deploy \
             --no-confirm-changeset \
-            --no-fail-on-empty-changeset \ 
+            --no-fail-on-empty-changeset \
             --stack-name hello-discord \
             --s3-bucket adunmore-hello-discord \
             --capabilities CAPABILITY_IAM \
